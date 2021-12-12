@@ -58,13 +58,13 @@ def SummaryData(event):
 #######################################################################################################
 GUI = Tk()
 GUI.geometry('600x700')
-GUI.title('โปรแกรมของโบ๊ท')
+GUI.title('โปรแกรมสำหรับแม่ค้าทุเรียน v.0.0.1')
 
 file = PhotoImage(file='durian.png')
 IMG = Label(GUI,image=file,text='')
 IMG.pack()
 
-L1 = Label(GUI,text='โปรแกรมคำนวณทุเรียน',font=('Angsana New',30,'bold'),fg='green')
+L1 = Label(GUI,text='โปรแกรมคำนวนทุเรียน',font=('Angsana New',30,'bold'),fg='green')
 L1.pack()    # .place(x,y) , .grid(row=0,column=0)
 
 L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน',font=('Angsana New',20))
