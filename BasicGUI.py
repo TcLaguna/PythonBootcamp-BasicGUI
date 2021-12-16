@@ -61,18 +61,18 @@ GUI.geometry('600x700')
 GUI.title('โปรแกรมสำหรับแม่ค้าทุเรียน v.0.0.1')
 
 file = PhotoImage(file='durian.png')
-IMG = Label(GUI,image=file,text='')
+IMG = Label(GUI,image=file,text='')			# แสดงรูปภาพ
 IMG.pack()
 
-L1 = Label(GUI,text='โปรแกรมคำนวนทุเรียน',font=('Angsana New',30,'bold'),fg='green')
+L1 = Label(GUI,text='โปรแกรมคำนวณทุเรียน',font=('Angsana New',30,'bold'),fg='green')		# สร้างกล่องแสดงข้อความ
 L1.pack()    # .place(x,y) , .grid(row=0,column=0)
 
-L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน',font=('Angsana New',20))
+L2 = Label(GUI,text='กรุณากรอกจำนวนทุเรียน',font=('Angsana New',20))		# สร้างกล่องแสดงข้อความ
 L2.pack()
 
 v_quantity = StringVar()   # ตำแหน่งตัวแปรที่ใช้เก็บข้อมูลของช่องกรอก
 
-E1 = ttk.Entry(GUI,textvariable=v_quantity,font=('impact',30))
+E1 = ttk.Entry(GUI,textvariable=v_quantity,font=('impact',30))   	# สร้างกล่องใส่คำสั่ง
 E1.pack()
 
 def Calculate(event=None):								# event=None ทำให้เรียกใช้งานฟังก์ชั่นได้ทั้ง แบบกดปุ่มบนแป้นพิมพ์ และ คลิกปุ่ม 
@@ -95,8 +95,11 @@ def Calculate(event=None):								# event=None ทำให้เรียกใ
 
 
 GUI.bind('<F1>',SummaryData)			# กำหนดให้เมื่อกดปุ่ม F1 จะใช้งานฟังก์ชั่น SummaryData
+GUI.bind('<F2>',SummaryData)			# กำหนดให้เมื่อกดปุ่ม F2 จะใช้งานฟังก์ชั่น SummaryData
 
-B1 = ttk.Button(GUI, text='คำนวณ',command=Calculate)
+s = ttk.Style()						
+s.configure('my.TButton', font=('SOV_snit', 45, 'bold'))		# แก้ไขรูปแบบ Front
+B1 = ttk.Button(GUI, text='คำนวณ',command=Calculate,style='my.TButton')		# สร้างปุ่มคำนวน
 B1.pack(ipadx=30,ipady=20,pady=20)
 
 E1.bind('<Return>',Calculate)				# กำหนดให้เมื่อกดปุ่ม Enter จะใช้งานฟังก์ชั่น Calculate
